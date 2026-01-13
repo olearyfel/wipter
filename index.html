@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gana Dinero Sin Hacer Nada | Wipter 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #7B3AED;
+            --primary-light: #9F66FF;
+            --secondary: #10B981;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .emoji-icon {
+            font-size: 1.2em;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        /* Header & Hero */
+        .hero {
+            background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(123, 58, 237, 0.15) 0%, transparent 70%);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #D1D5DB;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .highlight {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(123, 58, 237, 0.4);
+            margin-top: 1rem;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(123, 58, 237, 0.5);
+        }
+        /* Stats Section */
+        .stats {
+            background-color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .stat-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 0;
+            background-color: #F3F4F6;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .step {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease;
+        }
+        .step:hover {
+            transform: translateY(-10px);
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+        /* Benefits */
+        .benefits {
+            padding: 5rem 0;
+            background: white;
+        }
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .benefit {
+            padding: 2rem;
+            background: linear-gradient(145deg, #ffffff 0%, #F9FAFB 100%);
+            border-radius: 16px;
+            border-left: 5px solid var(--secondary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .benefit h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        /* Referral Section */
+        .referral {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .referral-code {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px dashed rgba(255, 255, 255, 0.4);
+            padding: 2rem;
+            border-radius: 16px;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        .code-display {
+            font-family: monospace;
+            font-size: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            word-break: break-all;
+        }
+        /* FAQ */
+        .faq {
+            padding: 5rem 0;
+            background-color: #F3F4F6;
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-answer.active {
+            max-height: 300px;
+            padding-bottom: 1.5rem;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .footer-links a {
+            color: #D1D5DB;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1><span class="emoji-icon">💰</span> Gana Dinero <span class="highlight">Sin Hacer Nada</span> este 2026</h1>
+            <p class="hero-subtitle">Descubre cómo miles de personas ya están generando ingresos pasivos compartiendo su ancho de banda de internet no utilizado. Con Wipter, tu conexión se convierte en tu fuente de ingresos.</p>
+            <a href="https://wipter.com/register?via=B8B7987A79" class="cta-button" target="_blank">
+                <span class="emoji-icon">⚡</span> Comienza a Ganar en Minutos <span class="emoji-icon">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title"><span class="emoji-icon">📈</span> La Revolución del Ingreso Pasivo</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10X</div>
+                    <p><span class="emoji-icon">🔥</span> Pagos más altos que la competencia</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$20</div>
+                    <p><span class="emoji-icon">💵</span> Mínimo para retiro inmediato</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0%</div>
+                    <p><span class="emoji-icon">🕵️</span> Comisiones ocultas</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Global</div>
+                    <p><span class="emoji-icon">🌍</span> Mismas tarifas en todo el mundo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title"><span class="emoji-icon">🛠️</span> ¿Cómo Funciona?</h2>
+            <p class="section-subtitle">En solo 5 minutos puedes configurar tu fuente de ingresos pasivos. Así de fácil es ganar dinero mientras usas tu dispositivo normalmente.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3><span class="emoji-icon">📥</span> Descarga la App</h3>
+                    <p>Instala la aplicación gratuita de escritorio (Windows, Mac o Linux)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3><span class="emoji-icon">⚙️</span> Configura Preferencias</h3>
+                    <p>Personaliza cuánto ancho de banda quieres compartir y activa el interruptor</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3><span class="emoji-icon">👛</span> Conecta tu Billetera</h3>
+                    <p>Vincula tu método de pago preferido para recibir tus ganancias</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3><span class="emoji-icon">✅</span> Minimiza y Olvida</h3>
+                    <p>Usa tu dispositivo normalmente mientras la app trabaja en segundo plano <span class="emoji-icon">😴</span></p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3><span class="emoji-icon">🎉</span> Retira Tus Ganancias</h3>
+                    <p>Cobra tan pronto como alcances los $20 USD <span class="emoji-icon">💸</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title"><span class="emoji-icon">⭐</span> ¿Por Qué Elegir Wipter?</h2>
+            <p class="section-subtitle">Una plataforma diseñada para maximizar tus ganancias mientras protege tu privacidad y seguridad.</p>
+            
+            <div class="benefit-grid">
+                <div class="benefit">
+                    <h3><span class="emoji-icon">🔒</span> Seguridad Total</h3>
+                    <p>La aplicación utiliza técnicas avanzadas de encriptación para proteger tus datos y privacidad. No recopila información personal más allá de lo necesario.</p>
+                </div>
+                <div class="benefit">
+                    <h3><span class="emoji-icon">💎</span> Sin Tarifas Ocultas</h3>
+                    <p>Lo que ganas es tuyo. Wipter no cobra comisiones, cada centavo va directamente a tu billetera. <span class="emoji-icon">👍</span></p>
+                </div>
+                <div class="benefit">
+                    <h3><span class="emoji-icon">✈️</span> Acceso Global</h3>
+                    <p>No importa dónde vivas, recibes las mismas tarifas que cualquier otro usuario en el mundo. <span class="emoji-icon">🤝</span></p>
+                </div>
+                <div class="benefit">
+                    <h3><span class="emoji-icon">📱</span> Compatibilidad Total</h3>
+                    <p>Funciona en Windows, Mac, Linux y Android. Solo necesitas conexión a internet. <span class="emoji-icon">🔌</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Section -->
+    <section class="referral">
+        <div class="container">
+            <h2 class="section-title"><span class="emoji-icon">🚀</span> ¡Multiplica Tus Ganancias!</h2>
+            <p style="max-width: 700px; margin: 0 auto 1rem; font-size: 1.1rem;">
+                <span class="emoji-icon">🤝</span> Los programas de referidos son una de las estrategias más efectivas para aumentar ingresos, ya que capitalizan la confianza entre amigos y familiares. 
+                Comparte tu enlace y gana aún más por cada persona que se una gracias a ti. <span class="emoji-icon">📢</span>
+            </p>
+            
+            <div class="referral-code">
+                <h3><span class="emoji-icon">🎁</span> Tu Enlace Exclusivo</h3>
+                <p>Comparte este enlace y comienza a ganar recompensas adicionales:</p>
+                <div class="code-display">https://wipter.com/register?via=B8B7987A79</div>
+                <p style="margin-bottom: 1rem;"><span class="emoji-icon">✨</span> Cada persona que se registre usando tu código te generará beneficios adicionales.</p>
+                <a href="https://wipter.com/register?via=B8B7987A79" class="cta-button" style="background: white; color: var(--primary);" target="_blank">
+                    <span class="emoji-icon">📋</span> Copiar Enlace para Compartir
+                </a>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">
+                <strong><span class="emoji-icon">💡</span> Consejo:</strong> Comparte tu experiencia personal. Los testimonios genuinos son hasta 10 veces más efectivos que la publicidad tradicional. <span class="emoji-icon">📣</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container faq-container">
+            <h2 class="section-title"><span class="emoji-icon">❓</span> Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span><span class="emoji-icon">🛡️</span> ¿Es seguro compartir mi ancho de banda?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="emoji-icon">✅</span> Sí, Wipter está diseñado con seguridad y privacidad en mente. Utiliza encriptación avanzada y no recopila información personal innecesaria.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span><span class="emoji-icon">💰</span> ¿Cuánto puedo ganar realmente?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="emoji-icon">📊</span> Las ganancias varían según el ancho de banda que compartas y la actividad de la red. Wipter paga hasta 10 veces más que la competencia, y puedes retirar desde $20 USD.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span><span class="emoji-icon">⚡</span> ¿Afecta a mi velocidad de internet?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="emoji-icon">🐢➡️🐇</span> La aplicación utiliza solo el ancho de banda no utilizado, por lo que no debería afectar tu uso normal. Puedes personalizar los límites en la configuración.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span><span class="emoji-icon">💻</span> ¿En qué dispositivos funciona?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="emoji-icon">🖥️📱</span> Disponible para Windows, Mac, Linux y Android. iOS no es compatible actualmente. <span class="emoji-icon">❌</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="hero" style="padding: 4rem 0; background: var(--dark);">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white; margin-bottom: 1.5rem;"><span class="emoji-icon">⏳</span> ¿Qué Estás Esperando?</h2>
+            <p style="color: #D1D5DB; max-width: 700px; margin: 0 auto 2rem; font-size: 1.2rem;">
+                2026 es el año perfecto para comenzar a generar ingresos pasivos. Únete a la comunidad Wipter y convierte tu conexión a internet en una fuente de ingresos. <span class="emoji-icon">🚀</span>
+            </p>
+            <a href="https://wipter.com/register?via=B8B7987A79" class="cta-button" target="_blank">
+                <span class="emoji-icon">🎯</span> Comienza Gratis Ahora <span class="emoji-icon">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;"><span class="emoji-icon">©️</span> Wipter - Ingresos Pasivos 2026</p>
+            <div class="footer-links">
+                <a href="https://wipter.com/es" target="_blank"><span class="emoji-icon">🏠</span> Sitio Oficial</a>
+                <a href="https://wipter.com/support" target="_blank"><span class="emoji-icon">🆘</span> Soporte</a>
+                <a href="https://wipter.com/privacy" target="_blank"><span class="emoji-icon">🔏</span> Privacidad</a>
+            </div>
+            <p style="margin-top: 2rem; color: #9CA3AF; font-size: 0.9rem;">
+                <span class="emoji-icon">⚠️</span> Este es un sitio de afiliado independiente. Wipter es una marca registrada de sus respectivos dueños.
+                Las ganancias pueden variar según el uso y condiciones de red. <span class="emoji-icon">📝</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span:last-child');
+            
+            answer.classList.toggle('active');
+            icon.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
